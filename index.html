@@ -1,56 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
 <head>
-  <meta charset="utf-8">
-  <title>AR.js Sample</title>
-
-  <!-- A-Frame -->
-  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-
-  <!-- AR.js -->
-  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
-
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-    }
-  </style>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=750">
+	<meta name="format-detection" content="telephone=no,address=no,email=no">
+	<meta name="description" content="">
+	<meta property="og:locale" content="ja_JP" />
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="">
+	<meta property="og:locale" content="ja_JP" />
+	<link rel="stylesheet" href="css/style.css">
 </head>
-
-<body>
-  <a-scene
-    embedded
-    arjs="sourceType: webcam; debugUIEnabled: false;"
-  >
-
-    <!-- マーカー -->
-    <a-marker type="pattern" url="marker.patt">
-
-      <!-- 表示する画像 -->
-      <a-image
-        id="mascot"
-        src="mascot.png"
-        width="1"
-        height="1"
-        position="0 0.5 0"
-      ></a-image>
-
-    </a-marker>
-
-    <!-- カメラ -->
-    <a-entity camera></a-entity>
-  </a-scene>
+<body class="common service">
+Hello
 </body>
-
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const mascot = document.querySelector("#mascot");
-
-    mascot.addEventListener("click", () => {
-      window.open("http://masu-ken.com/", "_blank");
-    });
-  });
-</script>
 
 </html>
