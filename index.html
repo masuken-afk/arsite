@@ -1,50 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>AR-masuken</title>
-
-  <!-- A-Frame -->
-  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-
-  <!-- AR.js -->
-  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
-
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>AR起動</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
-  <a-scene
-    embedded
-    arjs="sourceType: webcam; debugUIEnabled: false;"
-  >
 
-    <!-- マーカー -->
-    <a-marker type="pattern" url="marker.patt">
+<p>ARを起動しています…</p>
 
-      <!-- 表示する画像 -->
-      <a-image
-        id="mascot"
-        src="mascot.png"
-        width="2"
-        height="2"
-        position="0 1 0"
-        rotation="0 0 0"
-        scale="2 2 2"
-      ></a-image>
+<script>
+const ua = navigator.userAgent;
 
-    </a-marker>
+// iPhone / iPad
+if (/iPhone|iPad|iPod/.test(ua)) {
+  location.href = "quicklook.html";
+}
+// Android
+else if (/Android/.test(ua)) {
+  location.href = "webxr.html";
+}
+// その他
+else {
+  document.body.innerHTML = "スマートフォンでアクセスしてください";
+}
+</script>
 
-    <!-- カメラ -->
-    <a-entity camera></a-entity>
-  </a-scene>
 </body>
-
-
-
 </html>
